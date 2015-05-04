@@ -4,5 +4,5 @@ from Tool import views
 
 urlpatterns = patterns('',
     url(r'^$', views.welcomeTool, name='index'),
-    url(r'^$', views.AQIResult, name='AQIResult'),
+    url(r'^$', views.AQIvalues, name='AQIResult'),
 )

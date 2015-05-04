@@ -92,10 +92,10 @@
 				<li class=""><a href="../About">About</a></li>
 				<li class=""><a href="../SafeLevels">Safe Levels</a></li>
 				<li class=""><a href="./">Tools</a></li>
-				<li class=""><a href="../Measures">Measures</a></li>
+				<!-- <li class=""><a href="../Measures">Measures</a></li> -->
 				<li class=""><a href="../Team">Team</a></li>
 				<li class=""><a href="../GetUpdates">Interact with Us!</a></li>
-			</ul
+			</ul>
 
 		</nav><!--/ #navigation-->
 		
@@ -178,60 +178,74 @@
 
 					<div class="col-xs-12">
 						<hgroup class="section-title align-center opacity">
-							<h1>AQI Tool</h1>
-							<form id="insert_form"  method="post" enctype="multipart/form-data">
-						        {% csrf_token %} 
-						            <div style="width:300px">
-						            	<div><h2> Enter values : <h2></div>
-									        <div>
-									            <input type="text" name="location" value="location" ></input>
-									        </div>
-									        
-									        <br>
-							        	<button type="submit" class="btn btn-default" style="">Submit</button>
-								    </div>
-							        
-						    </form>
-						</hgroup>			
-					</div>
-					
-				</div><!--/ .row-->
-
-				<br>
+							<h1>AQI & RISK ASSESSMENT Tool</h1>
+							<br>
 				<div>
 					<form id="insert_form"  method="post" enctype="multipart/form-data">
 											        {% csrf_token %} 
-											            <div style="width:300px">
-											            	<div><h2> Enter values : <h2></div>
+							<div style="width:300px">
+							        	<div><h2> Enter values : <h2></div>
 											            	 
-														         <div>
-														            <input type="text" name="location" value="location" ></input>
-														        </div>  
+									         <div>
+									            <input type="text" name="location" value="location" ></input>
+
+									           	<!-- <SELECT NAME="mylist" onChange="disp_text()">
+												<OPTION VALUE="m1">Ahmedabad (Maninagar)
+												<OPTION VALUE="m2">Anand Vihar
+												<OPTION VALUE="m3">Bangaluru (BTM Layout)
+												<OPTION VALUE="m4">Civil Lines
+												<OPTION VALUE="m5">Dilshad Garden
+												<OPTION VALUE="m5">Dwarka
+												<OPTION VALUE="m5">Faridabad
+												<OPTION VALUE="m5">IGI Airport
+												<OPTION VALUE="m5">ITO
+												<OPTION VALUE="m5">Lucknow (Lalbagh)
+												<OPTION VALUE="m5">Lucknow (Talkatora District Industries Center)
+												<OPTION VALUE="m5">Mandir Marg
+												<OPTION VALUE="m5">Mumbai (NMMC Airoli)
+												<OPTION VALUE="m5">Punjabi Bagh
+												<OPTION VALUE="m5">R K Puram
+												<OPTION VALUE="m5">Shadipur
+												</SELECT>
+												v = insert_form.mylist.selectedIndex
+
+												<input type="text" name="location" value= selected ></input> -->
+
+
+									        </div>  
 														        
-														        <br>
-												        	<button type="submit" class="btn btn-default" style="">Submit</button>
-													    </div>
-
-													    
-													    	 
-												        
-											    </form>
-
+									        <br>
+									        
+									        	<button type="submit" class="btn btn-default" style="color:#333 !important">Submit</button>
+									       
+						    </div>		
+						    									        
+					</form>
 
 
+						<h2>AQI Value</h2>
 					<div>
 
-						{% for key, value in colorDict.items %}
+						<!-- {% for key, value in colorDict.items %} -->
 						<!-- <p>{{ elem.color }}</p> -->
-						<p>{{key}} </p>
-						<p>{{value}}</p>
+						
+						<p><font color = {{key}}>{{key}}</strong></font></p>
+						<p><font color = {{key}}>{{value}}<strong></font></p>
+
+
+						<div style = "margin: 5px auto;background-color:{{key}}; border-style: solid; height:100px ;width:300px; border-width:1px">
+							</div>
 
 					<!-- <p>{{elem.location}} </p> --> 
 
-					{% endfor %}
+					<!-- {% endfor %} -->
 
 					</div>
 					</div>	
+						</hgroup>			
+					</div>
+					
+				</div><!--/ .row-->				
 
 			</div><!--/ .container-->	
 		</section>
@@ -239,9 +253,9 @@
 		
 	
 	
-	
-	
-		
+								
+
+					
 		
 		
 		

@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <!-- saved from url=(0053)http://html.webtemplatemasters.com/accio/index-2.html -->
 <html class="not-ie  js touch cssanimations csstransitions" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}</style><link type="text/css" rel="stylesheet" href="./Accio_files/css"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}</style>
@@ -179,63 +178,25 @@
 					<div class="col-xs-12">
 						<hgroup class="section-title align-center opacity">
 							<h1>AQI Tool</h1>
-							<form id="insert_form"  method="post" enctype="multipart/form-data">
-						        {% csrf_token %} 
-						            <div style="width:300px">
-						            	<div><h2> Enter values : <h2></div>
-									        <div>
-									            <input type="text" name="location" value="location" ></input>
-									        </div>
-									        
-									        <br>
-							        	<button type="submit" class="btn btn-default" style="">Submit</button>
-								    </div>
-							        
-						    </form>
+							<form action="/AirCheck/Tool/" method="post"accept-charset="utf-8">{% csrf_token %}
+							    <label for="Pollutant"><h3> Pollutant Name</h3></label>
+                                                            <h1>
+                                                            <select>
+								  <option value="Ozone">Ozone</option>
+								  <option value="CO">Carbon Mono-oxide</option>
+								  <option value="Particulate Matter">Particulate Matter</option>
+								  <option value="No2">Nitrogen Dioxide</option>
+								</select> </h1>
+							    <label for="Concentration"><h3> Concentration</h3></label>
+							    <input id="COncentration" type="text" name="Concentration" value="{{ current_name }}">
+							    <input type="submit" value="OK">
+                            </form>
 						</hgroup>			
 					</div>
 					
 				</div><!--/ .row-->
 
-				<br>
-				<div>
-					<form id="insert_form"  method="post" enctype="multipart/form-data">
-											        {% csrf_token %} 
-											            <div style="width:300px">
-											            	<div><h2> Enter values : <h2></div>
-											            	 
-														         <div>
-														            <input type="text" name="location" value="location" ></input>
-														        </div>  
-														        
-														        <br>
-												        	<button type="submit" class="btn btn-default" style="">Submit</button>
-													    </div>
-
-													    
-													    	 
-												        
-											    </form>
-
-
-
-					<div>
-
-						{% for key, value in colorDict.items %}
-						<!-- <p>{{ elem.color }}</p> -->
-						<p>{{key}} </p>
-						<p>{{value}}</p>
-
-					<!-- <p>{{elem.location}} </p> --> 
-
-					{% endfor %}
-
-					</div>
-					</div>	
-
 			</div><!--/ .container-->	
-		</section>
-	</section>
 		
 	
 	
